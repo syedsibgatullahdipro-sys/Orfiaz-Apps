@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orfiaz•App - Audio Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .box {
+      background: #222;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 350px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #25D366;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>😂 Orfiaz•App</h2>
+    <p>Tap the button</p>
+
+    <button onclick="playLaugh()">Play Laugh</button>
+
+    <audio id="laugh">
+      <source src="baby-laugh.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </div>
+
+  <script>
+    function playLaugh() {
+      const audio = document.getElementById("laugh");
+      audio.currentTime = 0;
+      audio.play().catch(() => {
+        alert("Please tap again to play audio");
+      });
+    }
+  </script>
+
+</body>
+</html>
